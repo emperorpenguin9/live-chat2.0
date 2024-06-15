@@ -5,8 +5,8 @@ import { PubNubProvider } from "pubnub-react";
 import { UserEntity } from "@pubnub/react-chat-components";
 
 import UnlockIcon from "../assets/unlock.svg";
-import PatientView from "./PatientView";
-import DoctorView from "./DoctorView";
+import IntervieweeView from "./IntervieweeView";
+import CompanyView from "./CompanyView";
 import LoginView from "./LoginView";
 import users from "../data/users.json";
 
@@ -48,10 +48,10 @@ export default function SwitchView(props: { darkMode: boolean }): JSX.Element {
         <span className="ml-2">Log out</span>
       </button>
 
-      {user.type === "patient" ? (
-        <PatientView patient={user} />
+      {user.type === "interviewee" ? (
+        <IntervieweeView interviewee={user} />
       ) : (
-        <DoctorView doctor={user} />
+        <CompanyView company={user} />
       )}
     </PubNubProvider>
   );

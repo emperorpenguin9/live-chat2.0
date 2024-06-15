@@ -18,22 +18,24 @@ import memberships from "../data/memberships.json";
 import jsonUsers from "../data/users.json";
 const users = jsonUsers as Array<UserEntity & { type: string }>;
 
-type PatientViewProps = {
-  patient: UserEntity & { type: string };
+type IntervieweeViewProps = {
+  interviewee: UserEntity & { type: string };
 };
 
 const generateId = hexoid();
 
-function PatientView(props: PatientViewProps): JSX.Element {
-  const { patient } = props;
-  const membership = memberships.find((m) => m.members.includes(patient.id));
+function IntervieweeView(props: IntervieweeViewProps): JSX.Element {
+  const { interviewee } = props;
+  const membership = memberships.find((m) =>
+    m.members.includes(interviewee.id)
+  );
   const channel = membership?.channelId;
-  const doctorId = membership?.members.find((id) => id !== patient.id);
-  const doctor = users.find((u) => u.id === doctorId);
+  const companyId = membership?.members.find((id) => id !== interviewee.id);
+  const company = users.find((u) => u.id === companyId);
   const [widgetOpen, setWidgetOpen] = useState(true);
   const [unread, setUnread] = useState(0);
   const onMessage = () => setUnread((c) => c + 1);
-  if (!channel || !doctor) return <></>;
+  if (!channel || !company) return <></>;
 
   return (
     <div
@@ -46,7 +48,7 @@ function PatientView(props: PatientViewProps): JSX.Element {
           Interviewee&apos;s Interface
         </h1>
         <h2 className="text-gray-400">
-          Logged in as: <strong>{patient.name}</strong>
+          Logged in as: <strong>{interviewee.name}</strong>
         </h2>
       </header>
 
@@ -56,17 +58,17 @@ function PatientView(props: PatientViewProps): JSX.Element {
         }`}
       >
         <header className="px-4 h-[70px] bg-cyan-700 dark:bg-slate-700 text-white flex items-center shrink-0">
-          {doctor.profileUrl && (
+          {company.profileUrl && (
             <img
-              alt={`${doctor.name}'s Avatar`}
-              src={doctor.profileUrl}
+              alt={`${company.name}'s Avatar`}
+              src={company.profileUrl}
               className="rounded-full w-9 h-9 mr-3"
             />
           )}
 
           <div className="grow">
-            <p className="font-bold leading-5">{doctor.name}</p>
-            <p className="leading-5">{doctor.custom?.title}</p>
+            <p className="font-bold leading-5">{company.name}</p>
+            <p className="leading-5">{company.custom?.title}</p>
           </div>
 
           <button
@@ -109,7 +111,7 @@ function PatientView(props: PatientViewProps): JSX.Element {
               emojiPicker={<Picker data={emojiData} />}
               sendButton={<ArrowUpIcon />}
               onSend={() => {
-                actionCompleted({ action: "Send a Message as a Patient" });
+                actionCompleted({ action: "Send a Message as a Interviewee" });
               }}
             />
           </Chat>
@@ -120,7 +122,7 @@ function PatientView(props: PatientViewProps): JSX.Element {
           setWidgetOpen(!widgetOpen);
           setUnread(0);
         }}
-        style={{ backgroundImage: `url(${patient.profileUrl})` }}
+        style={{ backgroundImage: `url(${interviewee.profileUrl})` }}
         className={`border-[3px] duration-300 ease-in-out h-20 mt-8 relative rounded-full shadow-lg w-20
                     bg-contain border-solid dark:hover:border-slate-500 hover:border-cyan-500 shrink-0
                     ${
@@ -140,4 +142,4 @@ function PatientView(props: PatientViewProps): JSX.Element {
   );
 }
 
-export default PatientView;
+export default IntervieweeView;

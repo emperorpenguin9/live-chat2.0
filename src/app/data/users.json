@@ -1,15 +1,15 @@
 [
   {
     "id": "601f9324",
-    "name": "Luke Young",
-    "type": "patient",
+    "name": "Terrell",
+    "type": "interviewee",
     "status": null,
     "externalId": null,
     "profileUrl": "https://randomuser.me/api/portraits/men/3.jpg",
     "email": null,
     "custom": {
-      "title": "Product Engineer",
-      "username": "lukeyoung",
+      "title": "Frontend Engineer",
+      "username": "Terrell",
       "painLevel": "3/10",
       "queuePosition": "1"
     },
@@ -18,15 +18,15 @@
   },
   {
     "id": "0948aa84",
-    "name": "Dr Sue Jones",
-    "type": "doctor",
+    "name": "Aaron",
+    "type": "Interviewer",
     "status": null,
     "externalId": null,
     "profileUrl": "https://raw.githubusercontent.com/pubnub/react-chat-components/master/samples/react/telehealth/public/doctor-16.png",
     "email": null,
     "custom": {
-      "title": "General Practitioner",
-      "username": "suejones",
+      "title": "Backend Engineer",
+      "username": "Aaron",
       "painLevel": null,
       "queuePosition": null
     },
@@ -35,15 +35,15 @@
   },
   {
     "id": "0222c484",
-    "name": "Sara Flores",
-    "type": "patient",
+    "name": "Unknown interviewee",
+    "type": "interviewee",
     "status": null,
     "externalId": null,
     "profileUrl": "https://randomuser.me/api/portraits/women/2.jpg",
     "email": null,
     "custom": {
-      "title": "VP, Sales",
-      "username": "saraflores",
+      "title": "Frontend Engineer",
+      "username": "unknown",
       "painLevel": "9/10",
       "queuePosition": "2"
     },

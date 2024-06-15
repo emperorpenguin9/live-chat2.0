@@ -19,29 +19,29 @@ import ArrowUp from "../assets/arrow-turn-up.svg";
 import memberships from "../data/memberships.json";
 import users from "../data/users.json";
 
-type DoctorViewProps = {
-  doctor: UserEntity;
+type CompanyViewProps = {
+  company: UserEntity;
 };
 
 const generateId = hexoid();
 
-function DoctorView(props: DoctorViewProps): JSX.Element {
-  const { doctor } = props;
-  const doctorMemberships = memberships.filter((m) =>
-    m.members.includes(doctor.id)
+function CompanyView(props: CompanyViewProps): JSX.Element {
+  const { company } = props;
+  const companyMemberships = memberships.filter((m) =>
+    m.members.includes(company.id)
   );
-  const channels = doctorMemberships.reduce((acc: ChannelEntity[], m) => {
-    const patientId = m.members.find((id) => id !== doctor.id);
-    const patient = users.find((u) => u.id === patientId);
-    if (!patient) return acc;
+  const channels = companyMemberships.reduce((acc: ChannelEntity[], m) => {
+    const intervieweeId = m.members.find((id) => id !== company.id);
+    const interviewee = users.find((u) => u.id === intervieweeId);
+    if (!interviewee) return acc;
     return [
       ...acc,
       {
         id: m.channelId,
-        name: patient.name,
-        description: `Patient ID: ${patient.id}`,
+        name: interviewee.name,
+        description: `interviewee ID: ${interviewee.id}`,
         custom: {
-          profileUrl: patient?.profileUrl,
+          profileUrl: interviewee?.profileUrl,
         },
         updated: "",
         eTag: "",
@@ -59,9 +59,9 @@ function DoctorView(props: DoctorViewProps): JSX.Element {
       }`}
     >
       <header className="pb-2 mb-8 border-b border-solid border-gray-300">
-        <h1 className="text-gray-400 font-bold">Doctor&apos;s Interface</h1>
+        <h1 className="text-gray-400 font-bold">Company&apos;s Interface</h1>
         <h2 className="text-gray-400">
-          Logged in as: <strong>{doctor.name}</strong>
+          Logged in as: <strong>{company.name}</strong>
         </h2>
       </header>
 
@@ -70,7 +70,7 @@ function DoctorView(props: DoctorViewProps): JSX.Element {
           <aside className="flex flex-col">
             <header className="flex items-center h-[70px] pl-4 text-white bg-cyan-700 dark:bg-slate-700 tracking-[2px] uppercase">
               <MedicalIcon className="ml-2 mr-5" />
-              <span>Patient Queue</span>
+              <span>Interviewee Queue</span>
             </header>
 
             <nav className="bg-gray-100 dark:bg-gray-700 flex flex-col grow w-64">
@@ -81,14 +81,15 @@ function DoctorView(props: DoctorViewProps): JSX.Element {
             </nav>
 
             <footer className="bg-gray-300 dark:bg-gray-900 text-gray-800 dark:text-white text-sm px-3 h-[58px] flex items-center">
-              {doctor.profileUrl && (
+              {company.profileUrl && (
                 <img
-                  src={doctor.profileUrl}
+                  // src={company.profileUrl}
+                  src="@app/assets/yellowBird.png"
                   className="rounded-full w-9 h-9 mr-3"
-                  alt={`${doctor.name}'s Avatar`}
+                  alt={`${company.name}'s Avatar`}
                 />
               )}
-              <p>{doctor.name}</p>
+              <p>{company.name}</p>
             </footer>
           </aside>
 
@@ -127,7 +128,7 @@ function DoctorView(props: DoctorViewProps): JSX.Element {
                 emojiPicker={<Picker data={emojiData} />}
                 sendButton={<ArrowUp />}
                 onSend={() => {
-                  actionCompleted({ action: "Send a Message as a Doctor" });
+                  actionCompleted({ action: "Send a Message as a Company" });
                 }}
               />
             </article>
@@ -138,4 +139,4 @@ function DoctorView(props: DoctorViewProps): JSX.Element {
   );
 }
 
-export default DoctorView;
+export default CompanyView;
