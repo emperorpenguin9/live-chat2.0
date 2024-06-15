@@ -9,18 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emoji-mart/data": "^1.2.1",
+    "@emoji-mart/react": "^1.1.1",
+    "emoji-mart": "^5.6.0",
+    "hexoid": "^1.0.0",
+    "next": "14.2.4",
+    "pubnub-demo-integration": "^1.0.1",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.4"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@pubnub/react-chat-components": "^0.34.0",
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.4"
+    "eslint-config-next": "14.2.4",
+    "postcss": "^8",
+    "pubnub": "^7.6.3",
+    "pubnub-react": "^3.0.2",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
