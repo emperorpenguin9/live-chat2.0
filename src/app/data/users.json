@@ -5,7 +5,7 @@
     "type": "interviewee",
     "status": null,
     "externalId": null,
-    "profileUrl": "https://randomuser.me/api/portraits/men/3.jpg",
+    "profileUrl": "https://github.com/emperorpenguin9/live-chat2.0/blob/master/src/app/assets/Terrell.png",
     "email": null,
     "custom": {
       "title": "Frontend Engineer",
@@ -22,7 +22,7 @@
     "type": "Interviewer",
     "status": null,
     "externalId": null,
-    "profileUrl": "https://raw.githubusercontent.com/pubnub/react-chat-components/master/samples/react/telehealth/public/doctor-16.png",
+    "profileUrl": "https://github.com/emperorpenguin9/live-chat2.0/blob/master/src/app/assets/yellowBird.png",
     "email": null,
     "custom": {
       "title": "Backend Engineer",
