@@ -2,14 +2,9 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { UserEntity } from "@pubnub/react-chat-components";
 import { actionCompleted } from "pubnub-demo-integration";
-
-import Logo from "../assets/logo.svg";
-import LogoDark from "../assets/logo-dark.svg";
-import KeyIcon from "../assets/key.svg";
-import UserIcon from "../assets/user.svg";
-import Spinner from "../assets/spinner.svg";
-import splashUrl from "../assets/splash.png";
-import jsonUsers from "../data/users.json";
+import UserIcon from "../../../public/assets/user.svg";
+import Spinner from "../../../public/assets/spinner.svg";
+import jsonUsers from "@/app/data/users.json";
 const users = jsonUsers as Array<UserEntity & { type: string }>;
 
 const timeout = (ms: number) => {
@@ -18,11 +13,10 @@ const timeout = (ms: number) => {
 
 type LoginViewProps = {
   setUser: (user: UserEntity & { type: string }) => void;
-  darkMode: boolean;
 };
 
 export default function LoginView(props: LoginViewProps): JSX.Element {
-  const { setUser, darkMode } = props;
+  const { setUser } = props;
   const [userInput, setUserInput] = useState(
     users[0].custom?.username as string
   );
@@ -39,9 +33,9 @@ export default function LoginView(props: LoginViewProps): JSX.Element {
       setUser(user);
       actionCompleted({
         action:
-          user.type === "patient"
-            ? "Log in as a Patient"
-            : "Log in as a Doctor (in a new tab)",
+          user.type === "interviewee"
+            ? "Log in as a Interviewee"
+            : "Log in as a Company (in a new tab)",
       });
     } else setError(true);
   };

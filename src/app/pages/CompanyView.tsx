@@ -1,29 +1,25 @@
 "use client";
 import React, { useState } from "react";
-import hexoid from "hexoid";
+
 import {
   UserEntity,
-  MessageList,
-  MessageInput,
   ChannelList,
   Chat,
+  MessageList,
+  MessageInput,
   ChannelEntity,
   TypingIndicator,
 } from "@pubnub/react-chat-components";
 import emojiData from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
 import { actionCompleted } from "pubnub-demo-integration";
-
-import MedicalIcon from "../assets/clipboard-medical.svg";
-import ArrowUp from "../assets/arrow-turn-up.svg";
+import ArrowUp from "../../../public/assets/arrow-turn-up.svg";
 import memberships from "../data/memberships.json";
 import users from "../data/users.json";
 
 type CompanyViewProps = {
-  company: UserEntity;
+  company: UserEntity & { type: string };
 };
-
-const generateId = hexoid();
 
 function CompanyView(props: CompanyViewProps): JSX.Element {
   const { company } = props;
@@ -69,7 +65,7 @@ function CompanyView(props: CompanyViewProps): JSX.Element {
       <div className="flex justify-end overflow-hidden grow rounded-xl shadow-xl">
         <Chat currentChannel={currentChannel.id} users={users as UserEntity[]}>
           <aside className="flex flex-col">
-            <header className="flex items-center h-[70px] pl-4 text-white bg-cyan-700 dark:bg-slate-700 tracking-[2px] uppercase">
+            <header className="flex items-center h-[70px] justify-center text-white bg-cyan-700 dark:bg-slate-700 tracking-[2px] uppercase">
               <span>Interviewee Queue</span>
             </header>
 
@@ -93,7 +89,7 @@ function CompanyView(props: CompanyViewProps): JSX.Element {
           </aside>
 
           <section className="flex flex-col grow">
-            <header className="flex items-center h-[70px] pl-4 bg-cyan-500 dark:bg-slate-500 dark:text-white text-gray-800 shrink-0">
+            <header className="flex items-center h-[70px] justify-left pl-6 bg-cyan-500 dark:bg-slate-500 dark:text-white text-gray-800 shrink-0">
               <strong>{currentChannel.name}</strong>
             </header>
 
@@ -112,7 +108,7 @@ function CompanyView(props: CompanyViewProps): JSX.Element {
                 // )}
                 welcomeMessages={{
                   message: {
-                    id: generateId(),
+                    id: "welcome-1",
                     type: "welcome",
                     text: "Please open another window or tab to chat",
                   },

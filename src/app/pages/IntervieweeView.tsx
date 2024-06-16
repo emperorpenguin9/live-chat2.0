@@ -1,28 +1,26 @@
 "use client";
 import React, { useState } from "react";
-import hexoid from "hexoid";
 import {
   UserEntity,
+  Chat,
   MessageList,
   MessageInput,
-  Chat,
   TypingIndicator,
 } from "@pubnub/react-chat-components";
+
 import emojiData from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
 import { actionCompleted } from "pubnub-demo-integration";
 
-import ArrowUpIcon from "../assets/arrow-turn-up.svg";
-import UnderlineIcon from "../assets/underline.svg";
-import memberships from "../data/memberships.json";
-import jsonUsers from "../data/users.json";
+import ArrowUpIcon from "../../../public/assets/arrow-turn-up.svg";
+import UnderlineIcon from "../../../public/assets/underline.svg";
+import memberships from "@/app/data/memberships.json";
+import jsonUsers from "@/app/data/users.json";
 const users = jsonUsers as Array<UserEntity & { type: string }>;
 
 type IntervieweeViewProps = {
   interviewee: UserEntity & { type: string };
 };
-
-const generateId = hexoid();
 
 function IntervieweeView(props: IntervieweeViewProps): JSX.Element {
   const { interviewee } = props;
@@ -96,7 +94,7 @@ function IntervieweeView(props: IntervieweeViewProps): JSX.Element {
               // )}
               welcomeMessages={{
                 message: {
-                  id: generateId(),
+                  id: "welcome-2",
                   type: "welcome",
                   text: "Please open another window or tab to chat",
                 },
