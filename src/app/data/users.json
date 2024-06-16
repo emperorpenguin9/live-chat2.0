@@ -5,7 +5,7 @@
     "type": "interviewee",
     "status": null,
     "externalId": null,
-    "profileUrl": "https://github.com/emperorpenguin9/live-chat2.0/blob/master/src/app/assets/Terrell.png",
+    "profileUrl": "/Terrell.png",
     "email": null,
     "custom": {
       "title": "Frontend Engineer",
@@ -19,13 +19,13 @@
   {
     "id": "0948aa84",
     "name": "Aaron",
-    "type": "Interviewer",
+    "type": "company",
     "status": null,
     "externalId": null,
-    "profileUrl": "https://github.com/emperorpenguin9/live-chat2.0/blob/master/src/app/assets/yellowBird.png",
+    "profileUrl": "/yellowBird.png",
     "email": null,
     "custom": {
-      "title": "Backend Engineer",
+      "title": "Interviewer",
       "username": "Aaron",
       "painLevel": null,
       "queuePosition": null

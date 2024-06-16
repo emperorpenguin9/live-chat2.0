@@ -123,7 +123,7 @@ function IntervieweeView(props: IntervieweeViewProps): JSX.Element {
           setUnread(0);
         }}
         style={{ backgroundImage: `url(${interviewee.profileUrl})` }}
-        className={`border-[3px] duration-300 ease-in-out h-20 mt-8 relative rounded-full shadow-lg w-20
+        className={`border-[3px] duration-300 ease-in-out h-20 mt-8 relative rounded-full shadow-lg w-16
                     bg-contain border-solid dark:hover:border-slate-500 hover:border-cyan-500 shrink-0
                     ${
                       widgetOpen

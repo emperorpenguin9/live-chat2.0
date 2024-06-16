@@ -69,7 +69,6 @@ function CompanyView(props: CompanyViewProps): JSX.Element {
         <Chat currentChannel={currentChannel.id} users={users as UserEntity[]}>
           <aside className="flex flex-col">
             <header className="flex items-center h-[70px] pl-4 text-white bg-cyan-700 dark:bg-slate-700 tracking-[2px] uppercase">
-              <MedicalIcon className="ml-2 mr-5" />
               <span>Interviewee Queue</span>
             </header>
 
@@ -83,8 +82,8 @@ function CompanyView(props: CompanyViewProps): JSX.Element {
             <footer className="bg-gray-300 dark:bg-gray-900 text-gray-800 dark:text-white text-sm px-3 h-[58px] flex items-center">
               {company.profileUrl && (
                 <img
-                  // src={company.profileUrl}
-                  src="@app/assets/yellowBird.png"
+                  src={company.profileUrl}
+                  // src="/yellowBird.png"
                   className="rounded-full w-9 h-9 mr-3"
                   alt={`${company.name}'s Avatar`}
                 />
