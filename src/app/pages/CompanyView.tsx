@@ -53,11 +53,12 @@ function CompanyView(props: CompanyViewProps): JSX.Element {
   );
 
   return (
-    <div
-      className={`p-5 overflow-hidden w-[740px] flex flex-col ${
-        window.innerHeight < 750 ? "h-[650px]" : "h-[750px]"
-      }`}
-    >
+    // <div
+    //   className={`p-5 overflow-hidden w-[740px] flex flex-col ${
+    //     window.innerHeight < 750 ? "h-[650px]" : "h-[750px]"
+    //   }`}
+    // >
+    <div className={`p-5 overflow-hidden w-9/12 flex flex-col h-full`}>
       <header className="pb-2 mb-8 border-b border-solid border-gray-300">
         <h1 className="text-gray-400 font-bold">Company&apos;s Interface</h1>
         <h2 className="text-gray-400">
@@ -83,7 +84,6 @@ function CompanyView(props: CompanyViewProps): JSX.Element {
               {company.profileUrl && (
                 <img
                   src={company.profileUrl}
-                  // src="/yellowBird.png"
                   className="rounded-full w-9 h-9 mr-3"
                   alt={`${company.name}'s Avatar`}
                 />
@@ -123,7 +123,6 @@ function CompanyView(props: CompanyViewProps): JSX.Element {
               <hr />
               <MessageInput
                 typingIndicator
-                fileUpload="image"
                 emojiPicker={<Picker data={emojiData} />}
                 sendButton={<ArrowUp />}
                 onSend={() => {

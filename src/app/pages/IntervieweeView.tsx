@@ -107,7 +107,6 @@ function IntervieweeView(props: IntervieweeViewProps): JSX.Element {
             <hr />
             <MessageInput
               typingIndicator
-              fileUpload="image"
               emojiPicker={<Picker data={emojiData} />}
               sendButton={<ArrowUpIcon />}
               onSend={() => {
