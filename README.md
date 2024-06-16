@@ -1,4 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Two-way chat application (TWCA)
+
+`TWCA` is a real-time, two-way chat application using NextJS and integrates it with a free account on PubNub.
+To demonstrate skills around front-end development and integration with 3rd party APIs, this app has been built as a fake real-time two-way chat between two clients.
 
 ## Getting Started
 
@@ -8,29 +11,67 @@ First, run the development server:
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This application uses [NextJS v14.2.4](https://www.npmjs.com/package/next/v/14.2.4) ,[React v18](https://www.npmjs.com/package/react/v/18.0.0), [ReactDOM v18](https://www.npmjs.com/package/react-dom), [PubNub JavaScript SDK v7.6.3](https://www.pubnub.com/docs/sdks/javascript/), and [PubNub React SDK v3.0.2](https://www.pubnub.com/docs/chat/react/setup).
 
-## Learn More
+To use the app, you need:
 
-To learn more about Next.js, take a look at the following resources:
+- [yarn](https://classic.yarnpkg.com/en/docs/install)
+- [Node.js](https://nodejs.org/en/download/)
+- Code editor (e.g. [Visual Studio Code](https://code.visualstudio.com/download))
+- PubNub [account](https://www.pubnub.com/docs/setup/account-setup) on the [Admin Portal](https://admin.pubnub.com/) with [Publish and Subscribe Keys](https://www.pubnub.com/docs/basics/initialize-pubnub) for your chat app with the default configuration.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Follow the steps to run the app locally.
 
-## Deploy on Vercel
+1. Clone the repository.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   git clone https://github.com/pubnub/react-chat-components.git
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. Install the dependencies.
+
+   ```bash
+   npm i
+   ```
+
+3. Paste your Publish and Subscribe Keys on `.env.local` file.
+
+4. Go to the `live-chat` folder.
+
+   ```bash
+   cd live-chat
+   ```
+
+5. Run the application.
+
+   ```bash
+   npm run dev
+   ```
+
+## Components
+
+- [Chat Provider](https://www.pubnub.com/docs/chat/components/react/chat-provider)
+- [Message List](https://www.pubnub.com/docs/chat/components/react/ui-components/message-list)
+- [Message Input](https://www.pubnub.com/docs/chat/components/react/ui-components/message-input)
+
+## Usernames
+
+You can log into the app either as a Company(Interviewer) or as one of the interviewee.
+Type in one of the available usernames and tap Log in. You don't need a password to log in.
+
+### Interviewee
+
+- Terrell
+- Mary
+
+### Company
+
+- Aaron

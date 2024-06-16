@@ -101,8 +101,7 @@ export default function LoginView(props: LoginViewProps): JSX.Element {
         </header>
 
         <footer className="w-full text-center px-20 py-10 dark:bg-black bg-gray-100">
-          This is a live chat sample app which is made by Next.js, PubNub
-          service.
+          This live chat sample app is made by Next.js, PubNub service.
         </footer>
       </section>
     </main>

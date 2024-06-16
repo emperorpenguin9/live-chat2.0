@@ -37,9 +37,7 @@ function IntervieweeView(props: IntervieweeViewProps): JSX.Element {
 
   return (
     <div
-      className={`patient-view flex flex-col items-end justify-end overflow-hidden p-5 w-[440px] ${
-        window.innerHeight < 750 ? "h-[680px]" : "h-[750px]"
-      }`}
+      className={`patient-view flex flex-col items-end justify-end  p-5 w-8/12 h-full`}
     >
       <header className="pb-2 mb-8 border-b border-solid border-gray-300 w-full">
         <h1 className="text-gray-400 font-bold">
