@@ -3,25 +3,12 @@
 `TWCA` is a real-time, two-way chat application using NextJS and integrates it with a free account on PubNub.
 To demonstrate skills around front-end development and integration with 3rd party APIs, this app has been built as a fake real-time two-way chat between two clients.
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
 ## Prerequisites
 
 This application uses [NextJS v14.2.4](https://www.npmjs.com/package/next/v/14.2.4) ,[React v18](https://www.npmjs.com/package/react/v/18.0.0), [ReactDOM v18](https://www.npmjs.com/package/react-dom), [PubNub JavaScript SDK v7.6.3](https://www.pubnub.com/docs/sdks/javascript/), and [PubNub React SDK v3.0.2](https://www.pubnub.com/docs/chat/react/setup).
 
 To use the app, you need:
 
-- [yarn](https://classic.yarnpkg.com/en/docs/install)
 - [Node.js](https://nodejs.org/en/download/)
 - Code editor (e.g. [Visual Studio Code](https://code.visualstudio.com/download))
 - PubNub [account](https://www.pubnub.com/docs/setup/account-setup) on the [Admin Portal](https://admin.pubnub.com/) with [Publish and Subscribe Keys](https://www.pubnub.com/docs/basics/initialize-pubnub) for your chat app with the default configuration.
@@ -35,6 +22,8 @@ Follow the steps to run the app locally.
    ```bash
    git clone https://github.com/pubnub/react-chat-components.git
    ```
+
+````
 
 2. Install the dependencies.
 
@@ -89,3 +78,4 @@ Type in one of the available usernames and tap Log in. You don't need a password
 ### Company
 
 - Aaron
+````

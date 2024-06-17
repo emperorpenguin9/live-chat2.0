@@ -14,6 +14,7 @@ import { actionCompleted } from "pubnub-demo-integration";
 
 import ArrowUpIcon from "../../../public/assets/arrow-turn-up.svg";
 import UnderlineIcon from "../../../public/assets/underline.svg";
+import companyImg from "../../../public/assets/yellowBird.png";
 import memberships from "@/app/data/memberships.json";
 import jsonUsers from "@/app/data/users.json";
 const users = jsonUsers as Array<UserEntity & { type: string }>;
@@ -57,7 +58,7 @@ function IntervieweeView(props: IntervieweeViewProps): JSX.Element {
           {company.profileUrl && (
             <Image
               alt={`${company.name}'s Avatar`}
-              src={company.profileUrl}
+              src={companyImg}
               className="rounded-full w-9 h-9 mr-3"
             />
           )}
