@@ -7,7 +7,7 @@ import {
   MessageInput,
   TypingIndicator,
 } from "@pubnub/react-chat-components";
-
+import Image from "next/image";
 import emojiData from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
 import { actionCompleted } from "pubnub-demo-integration";
@@ -55,7 +55,7 @@ function IntervieweeView(props: IntervieweeViewProps): JSX.Element {
       >
         <header className="px-4 h-[70px] bg-cyan-700 dark:bg-slate-700 text-white flex items-center shrink-0">
           {company.profileUrl && (
-            <img
+            <Image
               alt={`${company.name}'s Avatar`}
               src={company.profileUrl}
               className="rounded-full w-9 h-9 mr-3"
@@ -81,15 +81,6 @@ function IntervieweeView(props: IntervieweeViewProps): JSX.Element {
             <MessageList
               enableReactions
               reactionsPicker={<Picker data={emojiData} />}
-              // extraActionsRenderer={(message) => (
-              //   <div
-              //     onClick={() => {
-              //       onReply(message);
-              //     }}
-              //   >
-              //     <i className="material-icons-outlined"></i>
-              //   </div>
-              // )}
               welcomeMessages={{
                 message: {
                   id: "welcome-2",

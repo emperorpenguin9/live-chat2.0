@@ -53,14 +53,16 @@ Follow the steps to run the app locally.
 5. Run the application.
 
    ```bash
-   npm run dev
+   npm run build
+   npm run start
    ```
 
 # Run Test
 
 1. Install Playwright and lunch app in root.
    npm init playwright@latest
-   npm run dev
+   npm run build
+   npm run start
 
 2. Go to tests folder from root.
    cd tests

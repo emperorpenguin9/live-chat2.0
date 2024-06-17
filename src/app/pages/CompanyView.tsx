@@ -9,6 +9,7 @@ import {
   ChannelEntity,
   TypingIndicator,
 } from "@pubnub/react-chat-components";
+import Image from "next/image";
 import emojiData from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
 import { actionCompleted } from "pubnub-demo-integration";
@@ -77,7 +78,7 @@ function CompanyView(props: CompanyViewProps): JSX.Element {
 
             <footer className="bg-gray-300 dark:bg-gray-900 text-gray-800 dark:text-white text-sm px-3 h-[58px] flex items-center">
               {company.profileUrl && (
-                <img
+                <Image
                   src={company.profileUrl}
                   className="rounded-full w-9 h-9 mr-3"
                   alt={`${company.name}'s Avatar`}
@@ -96,15 +97,6 @@ function CompanyView(props: CompanyViewProps): JSX.Element {
               <MessageList
                 enableReactions
                 reactionsPicker={<Picker data={emojiData} />}
-                // extraActionsRenderer={(message) => (
-                //   <div
-                //     onClick={() => {
-                //       onReply(message);
-                //     }}
-                //   >
-                //     <span className="material-symbols-outlined">reply</span>
-                //   </div>
-                // )}
                 welcomeMessages={{
                   message: {
                     id: "welcome-1",
