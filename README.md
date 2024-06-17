@@ -56,6 +56,18 @@ Follow the steps to run the app locally.
    npm run dev
    ```
 
+# Run Test
+
+1. Install Playwright and lunch app in root.
+   npm init playwright@latest
+   npm run dev
+
+2. Go to tests folder from root.
+   cd tests
+
+3. Open Playwright test runner to run tests interactively in tests folder
+   npx playwright test
+
 ## Components
 
 - [Chat Provider](https://www.pubnub.com/docs/chat/components/react/chat-provider)
