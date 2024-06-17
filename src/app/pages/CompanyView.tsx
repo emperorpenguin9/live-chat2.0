@@ -61,18 +61,18 @@ function CompanyView(props: CompanyViewProps): JSX.Element {
       <div className="flex justify-end overflow-hidden grow rounded-xl shadow-xl">
         <Chat currentChannel={currentChannel.id} users={users as UserEntity[]}>
           <aside className="flex flex-col">
-            <header className="flex items-center h-[70px] justify-center text-white bg-cyan-700 dark:bg-slate-700 tracking-[2px] uppercase">
+            <header className="flex items-center h-[70px] justify-center text-white bg-cyan-700  tracking-[2px] uppercase">
               <span>Interviewee Queue</span>
             </header>
 
-            <nav className="bg-gray-100 dark:bg-gray-700 flex flex-col grow w-64">
+            <nav className="bg-gray-100  flex flex-col grow w-64">
               <ChannelList
                 channels={channels}
                 onChannelSwitched={(ch) => setCurrentChannel(ch)}
               />
             </nav>
 
-            <footer className="bg-gray-300 dark:bg-gray-900 text-gray-800 dark:text-white text-sm px-3 h-[58px] flex items-center">
+            <footer className="bg-gray-300 text-gray-800  text-sm px-3 h-[58px] flex items-center">
               {company.profileUrl && (
                 <Image
                   src={companyImg}
@@ -85,7 +85,7 @@ function CompanyView(props: CompanyViewProps): JSX.Element {
           </aside>
 
           <section className="flex flex-col grow">
-            <header className="flex items-center h-[70px] justify-left pl-6 bg-cyan-500 dark:bg-slate-500 dark:text-white text-gray-800 shrink-0">
+            <header className="flex items-center h-[70px] justify-left pl-6 bg-cyan-500  text-gray-800 shrink-0">
               <strong>{currentChannel.name}</strong>
             </header>
 

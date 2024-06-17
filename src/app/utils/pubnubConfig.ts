@@ -1,5 +1,6 @@
 import PubNub from "pubnub";
 
+// connect PubNub service with keys.
 export const createPubNub = (uuid: string) => {
   const pubnub = new PubNub({
     publishKey: process.env.NEXT_PUBLIC_PUB_KEY!,

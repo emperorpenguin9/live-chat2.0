@@ -54,7 +54,7 @@ function IntervieweeView(props: IntervieweeViewProps): JSX.Element {
           !widgetOpen && "invisible"
         }`}
       >
-        <header className="px-4 h-[70px] bg-cyan-700 dark:bg-slate-700 text-white flex items-center shrink-0">
+        <header className="px-4 h-[70px] bg-cyan-700 text-white flex items-center shrink-0">
           {company.profileUrl && (
             <Image
               alt={`${company.name}'s Avatar`}
@@ -71,7 +71,7 @@ function IntervieweeView(props: IntervieweeViewProps): JSX.Element {
           <button
             onClick={() => setWidgetOpen(false)}
             className="w-11 h-11 rounded-full ease-in-out duration-300 hover:bg-cyan-600
-                        dark:hover:bg-slate-500 active:bg-cyan-400 dark:active:bg-slate-300"
+                         active:bg-cyan-400 "
           >
             <UnderlineIcon className="inline" />
           </button>
@@ -111,16 +111,12 @@ function IntervieweeView(props: IntervieweeViewProps): JSX.Element {
         }}
         style={{ backgroundImage: `url(${interviewee.profileUrl})` }}
         className={`border-[3px] duration-300 ease-in-out h-20 mt-8 relative rounded-full shadow-lg w-20
-                    bg-contain bg-no-repeat border-solid dark:hover:border-slate-500 hover:border-cyan-500 shrink-0
-                    ${
-                      widgetOpen
-                        ? "border-cyan-700 dark:border-slate-700"
-                        : "border-white"
-                    }
+                    bg-contain bg-no-repeat border-solid d hover:border-cyan-500 shrink-0
+                    ${widgetOpen ? "border-cyan-700 " : "border-white"}
                   `}
       >
         {!widgetOpen && !!unread && (
-          <span className="absolute bg-cyan-700 dark:bg-slate-500 flex font-bold h-8 items-center justify-center right-[-10px] rounded-full text-sm text-white top-[-10px] w-8">
+          <span className="absolute bg-cyan-700  flex font-bold h-8 items-center justify-center right-[-10px] rounded-full text-sm text-white top-[-10px] w-8">
             {unread}
           </span>
         )}

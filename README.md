@@ -23,8 +23,6 @@ Follow the steps to run the app locally.
    git clone https://github.com/pubnub/react-chat-components.git
    ```
 
-````
-
 2. Install the dependencies.
 
    ```bash
@@ -46,7 +44,7 @@ Follow the steps to run the app locally.
    npm run start
    ```
 
-# Run Test
+## Usage
 
 1. Install Playwright and lunch app in root.
    npm init playwright@latest
@@ -78,4 +76,3 @@ Type in one of the available usernames and tap Log in. You don't need a password
 ### Company
 
 - Aaron
-````

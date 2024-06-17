@@ -23,6 +23,7 @@ export default function LoginView(props: LoginViewProps): JSX.Element {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  // Login function by selecting users
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -46,7 +47,7 @@ export default function LoginView(props: LoginViewProps): JSX.Element {
   };
 
   return (
-    <main className="login-view flex flex-row w-full h-full dark:bg-gray-800 dark:text-gray-100">
+    <main className="login-view flex flex-row w-full h-full ">
       <section className="flex flex-col w-full">
         <header className="flex flex-col grow justify-center items-center">
           <form
@@ -54,7 +55,7 @@ export default function LoginView(props: LoginViewProps): JSX.Element {
             className="flex flex-col w-[364px] mt-16 relative"
           >
             {loading && (
-              <div className="absolute w-full h-full bg-white dark:bg-gray-800 z-10 flex items-center justify-center opacity-50 pb-16">
+              <div className="absolute w-full h-full bg-white  z-10 flex items-center justify-center opacity-50 pb-16">
                 <Spinner />
               </div>
             )}
@@ -67,12 +68,8 @@ export default function LoginView(props: LoginViewProps): JSX.Element {
                 value={userInput}
                 onChange={handleChange}
                 className={`block w-full rounded border px-10 py-2.5 mt-2 focus:border-blue-900
-                  outline-0 dark:bg-gray-800 text-gray-700 dark:text-gray-100 appearance-none
-                  ${
-                    error
-                      ? "border-red-700 dark:border-red-600"
-                      : "border-gray-300"
-                  }
+                  outline-0  text-gray-700  appearance-none
+                  ${error ? "border-red-700 " : "border-gray-300"}
                 `}
               >
                 {users.map((u) => (
@@ -91,7 +88,7 @@ export default function LoginView(props: LoginViewProps): JSX.Element {
               value="Log in"
             />
             <p
-              className={`text-red-700 dark:text-red-600 mt-6 ${
+              className={`text-red-700  mt-6 ${
                 error ? "visible" : "invisible"
               }`}
             >
@@ -101,7 +98,7 @@ export default function LoginView(props: LoginViewProps): JSX.Element {
           </form>
         </header>
 
-        <footer className="w-full text-center px-20 py-10 dark:bg-black bg-gray-100">
+        <footer className="w-full text-center px-20 py-10  bg-gray-100">
           This live chat sample app is made by Next.js, PubNub service.
         </footer>
       </section>

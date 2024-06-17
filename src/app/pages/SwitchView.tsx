@@ -15,6 +15,7 @@ export default function SwitchView(): JSX.Element {
   const [user, setUser] = useState<UserEntity & { type: string }>();
   const [pubnub, setPubnub] = useState<PubNub>();
 
+  //side effect part to connect with PubNub service
   useEffect(() => {
     if (!user) return;
     try {
