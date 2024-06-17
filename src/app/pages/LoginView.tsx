@@ -63,6 +63,7 @@ export default function LoginView(props: LoginViewProps): JSX.Element {
               Username
               <select
                 name="username"
+                id="user-role"
                 value={userInput}
                 onChange={handleChange}
                 className={`block w-full rounded border px-10 py-2.5 mt-2 focus:border-blue-900
