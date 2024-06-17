@@ -105,6 +105,7 @@ function IntervieweeView(props: IntervieweeViewProps): JSX.Element {
         </main>
       </section>
       <button
+        name="send"
         onClick={() => {
           setWidgetOpen(!widgetOpen);
           setUnread(0);

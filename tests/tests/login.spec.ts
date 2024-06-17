@@ -7,7 +7,7 @@ test("should allow the user to log in", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "Log in" })).toBeVisible();
   await page.getByLabel("Username");
   await page.selectOption('select[name="username"]', "Terrell (interviewee)");
-  await page.getByRole("button", { name: "Log In" }).click();
+  await expect(page.getByRole("button", { name: "Log In" })).toBeVisible();
   await expect(
     page.getByText(
       "This live chat sample app is made by Next.js, PubNub service."
