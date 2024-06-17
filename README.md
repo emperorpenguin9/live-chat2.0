@@ -29,7 +29,7 @@ Follow the steps to run the app locally.
    npm i
    ```
 
-3. Paste your Publish and Subscribe Keys on `.env.local` file.
+3. Paste your Publish ,Subscribe and Secret Keys on `.env.local` file.
 
 4. Go to the `live-chat` folder.
 
